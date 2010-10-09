@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Company < ActiveRecord::Base
   def self.load_advantages
     Company.all.each { |company| company.compute_and_store_advantages }
@@ -71,5 +70,5 @@ class Company < ActiveRecord::Base
       end) as meno
     from
       sponzori_stran"
-   end
- end
+  end
+end
