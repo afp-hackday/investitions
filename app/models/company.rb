@@ -18,7 +18,7 @@ class Company < ActiveRecord::Base
       advantages[year][:ine_dotacie] = sum
     end
 
-    odpustene_clo = OdpusteneClo.sum(:celkova_odpustena_suma, :group => :rok, :conditions => ['ico', self[:ico]])
+    odpustene_clo = OdpusteneClo.sum(:celkova_odpustena_suma, :group => :rok, :conditions => ['ico = ?', self[:ico]])
     odpustene_clo.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
       advantages[year][:odpustene_clo] = sum
@@ -43,15 +43,16 @@ class Company < ActiveRecord::Base
     end
 
     obstaravania = Obstaravania.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
-    privatizacie.each do |year, sum|
+    obstaravania.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
       advantages[year][:obstaravania] = sum
     end
 
     obstaravania2 = Obstaravania2.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
-    privatizacie.each do |year, sum|
+    obstaravania2.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
-      advantages[year][:obstaravania] = sum
+      advantages[year][:obstaravania] = 0 if advantages[year][:obstaravania].nil?
+      advantages[year][:obstaravania] += sum
     end
 
 
@@ -61,7 +62,7 @@ class Company < ActiveRecord::Base
   end
 
   def self.rebuild
-    Company.delete_all
+    connection.execute "truncate table companies"
     connection.execute "INSERT INTO companies (id, ico, name)
     select
       null, ico_darcu,
@@ -70,7 +71,7 @@ class Company < ActiveRecord::Base
       end) as meno
     from
       sponzori_stran
-    group by meno"
+    group by ico_darcu"
   end
 
   def self.find_ico_by_name(name, address)
