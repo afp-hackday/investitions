@@ -27,7 +27,7 @@ class Company < ActiveRecord::Base
     konsolidacne = Konsolidacna.sum(:dlzna_suma, :group => :rok, :conditions => ['ico_dlznika = ?', self[:ico]])
     konsolidacne.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
-      advantages[year][:konsolidacne] = sum
+      advantages[year][:konsolidacna] = sum
     end
 
     polnodotacie = Polnodotacie.sum(:pozadovana_suma, :group => :rok, :conditions => ['ico_prijimatela = ?', self[:ico]])
@@ -39,7 +39,7 @@ class Company < ActiveRecord::Base
     privatizacie = Privatizacie.sum(:kupna_cena, :group => :rok, :conditions => ['ico_kupujuceho = ?', self[:ico]])
     privatizacie.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
-      advantages[year][:privatizacie] = sum
+      advantages[year][:privatizacia] = sum
     end
 
     obstaravania = Obstaravania.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
@@ -56,7 +56,7 @@ class Company < ActiveRecord::Base
 
 
     advantages.each do |year, sum|
-      Advantage.create(:company_id => self[:id], :period => year, :eurofondy => sum[:eurofondy], :ine_dotacie => sum[:ine_dotacie], :odpustene_clo => sum[:odpustene_clo], :konsolidacne => sum[:konsolidacne], :polnodotacie => sum[:polnodotacie], :privatizacie => sum[:privatizacie], :obstaravania => sum[:obstaravania])
+      Advantage.create(:company_id => self[:id], :period => year, :eurofondy => sum[:eurofondy], :ine_dotacie => sum[:ine_dotacie], :odpustene_clo => sum[:odpustene_clo], :konsolidacna => sum[:konsolidacna], :polnodotacie => sum[:polnodotacie], :privatizacia => sum[:privatizacia], :obstaravania => sum[:obstaravania])
     end
   end
 end
