@@ -61,6 +61,12 @@ class Company < ActiveRecord::Base
     end
   end
 
+  def related
+
+    FoafProxy.related_companies(self.name, nil);
+
+  end
+
   def self.rebuild
     connection.execute "truncate table companies"
     connection.execute "INSERT INTO companies (id, ico, name)
