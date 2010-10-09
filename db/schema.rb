@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009154156) do
+ActiveRecord::Schema.define(:version => 20101009155649) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.float   "ine_dotacie"
     t.float   "konsolidacna"
     t.float   "odpustene_clo"
+    t.float   "polnodotacie"
+    t.float   "privatizacia"
+    t.float   "obstaravania"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
