@@ -9,12 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009143432) do
+ActiveRecord::Schema.define(:version => 20101009152438) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
-    t.string  "period",     :limit => 10
+    t.string  "period",      :limit => 10
     t.float   "eurofondy"
+    t.float   "ine_dotacie"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
@@ -337,7 +338,7 @@ ActiveRecord::Schema.define(:version => 20101009143432) do
     t.string "ico_prijimatela",         :limit => 500
     t.string "adresa_prijimatela",      :limit => 500
     t.string "firma_sprostredkovatela", :limit => 500
-    t.string "vyska_dotacie",           :limit => 500
+    t.float  "vyska_dotacie"
     t.string "mena",                    :limit => 500
     t.string "rok",                     :limit => 500
     t.string "ziadana_suma",            :limit => 500
