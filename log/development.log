@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
   [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
@@ -1394,3 +1395,5 @@ Migrating to OtherAdvantages (20101009155649)
   [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `volene_funkcie`[0m
   [4;35;1mSQL (0.7ms)[0m   [0mdescribe `volene_funkcie`[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `volene_funkcie`[0m
+=======
+>>>>>>> 494ea25468dbb3c513bc5764c648394062480a7a

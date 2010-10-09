@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009155649) do
+ActiveRecord::Schema.define(:version => 20101009154156) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
@@ -18,9 +18,6 @@ ActiveRecord::Schema.define(:version => 20101009155649) do
     t.float   "ine_dotacie"
     t.float   "konsolidacna"
     t.float   "odpustene_clo"
-    t.float   "polnodotacie"
-    t.float   "privatizacia"
-    t.float   "obstaravania"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
@@ -93,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20101009155649) do
     t.integer "political_party_id"
     t.integer "company_id"
     t.string  "period",             :limit => 10
+    t.float "sum"
   end
 
   create_table "danove_ulavy", :id => false, :force => true do |t|
@@ -401,7 +399,7 @@ ActiveRecord::Schema.define(:version => 20101009155649) do
     t.string "priezvisko_dlznika",  :limit => 500
     t.string "mesto_dlznika",       :limit => 500
     t.string "meno_dlznika2",       :limit => 500
-    t.float  "dlzna_suma"
+    t.string "dlzna_suma",          :limit => 500
     t.string "mena",                :limit => 500
     t.string "poznamka",            :limit => 500
     t.string "datum_aktualizacie",  :limit => 500
@@ -451,7 +449,7 @@ ActiveRecord::Schema.define(:version => 20101009155649) do
     t.string "psc",                    :limit => 500
     t.string "mesto",                  :limit => 500
     t.string "paragraf",               :limit => 500
-    t.float  "celkova_odpustena_suma"
+    t.string "celkova_odpustena_suma", :limit => 500
     t.string "mena",                   :limit => 500
     t.string "rok",                    :limit => 500
     t.string "colny_urad",             :limit => 500
