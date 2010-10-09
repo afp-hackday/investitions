@@ -76,52 +76,66 @@ class Company < ActiveRecord::Base
 
   def self.find_ico_by_name(name, address)
 
-  name_parts = name.split(' ')
-  searched_name = name_parts.shift
+    name_parts = name.split(' ')
+    searched_name = name_parts.shift
 
-  #print "counting first searched_name: #{searched_name}....."
-  result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-  #puts "done"
+    print "counting first searched_name: #{searched_name}....."
+    result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+    puts "done"
 
-  while (result_count > 1 && name_parts.size > 0)
-    searched_name = searched_name + " " + name_parts.shift
-    #print "counting next searched_name: #{searched_name}......"
-    result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-    #puts "done"
-  end
+    while (result_count > 1 && name_parts.size > 0)
+      searched_name = searched_name + " " + name_parts.shift
+      print "counting next searched_name: #{searched_name}......"
+      result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+      puts "done"
+    end
 
-  result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
 
-  if(result.size == 0)
-    puts "--------------nikoho sme nenasli------------------"
-    #ideas:
-    # try to make fulltext search against name
-    #result = Company.find_by_sql ["SELECT ico,address FROM regis_main WHERE MATCH(name) against (?)", searched_name];
-    # try to make fulltext search against regions to find-out region and try the main loop again
-    #puts fields[1]
-    {"ico" => [], "evidence" => nil}
-  elsif(result.size > 1)
-    puts "--------------stale prilis vela, idem na adresu------------------"
+    if (result.size == 0)
+      puts "--------------nikoho sme nenasli------------------"
+      #ideas:
+      # try to make fulltext search against name
+      #result = Company.find_by_sql ["SELECT ico,address FROM regis_main WHERE MATCH(name) against (?)", searched_name];
+      # try to make fulltext search against regions to find-out region and try the main loop again
+      #puts fields[1]
+      nil
+    elsif (result.size > 1)
+      puts "--------------stale prilis vela, idem na adresu------------------"
       {"ico" => [], "evidence" => nil} if address.nil?
-    address_parts = address.split(' ')
-    searched_address = address_parts.shift
-    result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
-    while (result_count > 1 && address_parts.size > 0)
-      searched_address = searched_address + " " + address_parts.shift
+      address_parts = address.split(' ')
+      searched_address = address_parts.shift
       result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
-    end
+      while (result_count > 1 && address_parts.size > 0)
+        searched_address = searched_address + " " + address_parts.shift
+        result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
+      end
 
-    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
-    if(result.size > 1)
-      {"ico" => [], "evidence" => nil}
-    elsif(result.size == 1)
-      {"ico" => result[0].ico, "evidence" => nil}
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
+      if (result.size > 1)
+        puts '----------aj s adresou prilis vela-----------'
+        nil
+      elsif (result.size == 1)
+        puts "--------mame ICO------------"
+        result[0].ico
+      else
+        puts '----------a s adresou sme nikoho nenasli-----------'
+        nil
+      end
     else
-      {"ico" => [], "evidence" => nil}
+      #puts "--------------ICO FOUND------------------"
+      result[0].ico
     end
-  else
-    #puts "--------------ICO FOUND------------------"
-    {"ico" => [result[0].ico], "evidence" => searched_name}
   end
-end
+
+  def self.map_ico_for_eurofondy
+    puts "starting..."
+    SponzoriStran.all(:conditions => ["ico_darcu = ?", ""]).each do |item|
+      print "looking for #{item.firma_darcu}..."
+      ico = Company.find_ico_by_name(item.firma_darcu, item.adresa_darcu)
+      SponzoriStran.update(item._record_id, {:ico_darcu => ico}) unless ico.nil?
+      puts "finished"
+    end
+    puts "finished"
+  end
 end
