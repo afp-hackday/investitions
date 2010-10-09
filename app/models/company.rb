@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Company < ActiveRecord::Base
   def self.load_advantages
     Company.all.each { |company| company.compute_and_store_advantages }
@@ -59,4 +60,16 @@ class Company < ActiveRecord::Base
       Advantage.create(:company_id => self[:id], :period => year, :eurofondy => sum[:eurofondy], :ine_dotacie => sum[:ine_dotacie], :odpustene_clo => sum[:odpustene_clo], :konsolidacna => sum[:konsolidacna], :polnodotacie => sum[:polnodotacie], :privatizacia => sum[:privatizacia], :obstaravania => sum[:obstaravania])
     end
   end
-end
+
+  def self.rebuild
+    Company.delete_all
+    connection.execute "INSERT INTO companies (id, ico, name)
+    select
+      null, ico_darcu,
+      (case (firma_darcu)
+               when '' then concat(meno_darcu, ' ', priezvisko_darcu) else firma_darcu
+      end) as meno
+    from
+      sponzori_stran"
+   end
+ end

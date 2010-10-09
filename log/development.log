@@ -1,1231 +1,153 @@
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (256.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;36;1mSQL (26.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to PoliticalParty (20101009123124)
-  [4;35;1mSQL (35.8ms)[0m   [0mCREATE TABLE `political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009123124')[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `advokati`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `advokati`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `advokati`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `auditori`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `auditori`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `auditori`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `danove_ulavy`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `danovi_dlznici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `deblokacie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_kultura`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `dve_percenta`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `dve_percenta`[0m
-  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `eurofondy`[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `eurofondy`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `eurofondy`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `europolitika`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `europolitika`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `europolitika`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `funkcionari_stran`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `ine_dotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `justicia_osoby`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `konsolidacna`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `odpustene_clo`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `organisations`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `organisations`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `organisations`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `political_parties`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `political_parties`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `polnodotacie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `polnodotacie_du`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `poradcovia`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `poradcovia`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `poradcovia`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `pozicky_stranam`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `procurements`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `procurements`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `procurements`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `procurements_2`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sponzori_politikov`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `sponzori_stran`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `statne_podniky`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `statni_tajomnici`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_uradov`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `velvyslanci`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `vlady_sr`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `volebni_kandidati`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `volene_funkcie`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (41.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;36;1mSQL (39.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-  [4;35;1mSQL (43.1ms)[0m   [0mCREATE TABLE `political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(100)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124340')[0m
-Migrating to CreateCompanies (20101009124438)
-  [4;35;1mSQL (22.5ms)[0m   [0mCREATE TABLE `companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(200)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124438')[0m
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE `company_political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `political_party_id` int(11), `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124602')[0m
-Migrating to CreateCloseCompanies (20101009125151)
-  [4;35;1mSQL (3.3ms)[0m   [0mCREATE TABLE `close_companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125151')[0m
-Migrating to CreateAdvantages (20101009125248)
-  [4;35;1mSQL (35.2ms)[0m   [0mCREATE TABLE `advantages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125248')[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `advantages`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `advantages`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `advokati`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `advokati`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `advokati`[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `auditori`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `auditori`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `auditori`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `close_companies`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `close_companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `close_companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `companies`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `company_political_parties`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `danove_ulavy`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `danovi_dlznici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `deblokacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_kultura`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `dve_percenta`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `dve_percenta`[0m
-  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `eurofondy`[0m
-  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `eurofondy`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `eurofondy`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `europolitika`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `europolitika`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `europolitika`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `funkcionari_stran`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `ine_dotacie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `justicia_osoby`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `konsolidacna`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `odpustene_clo`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `organisations`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `organisations`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `organisations`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `political_parties`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `political_parties`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `polnodotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `polnodotacie_du`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `poradcovia`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `poradcovia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `poradcovia`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `pozicky_stranam`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `procurements`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `procurements`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `procurements`[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `procurements_2`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `procurements_2`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `sponzori_politikov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `sponzori_stran`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `statne_podniky`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `statni_tajomnici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `vedenie_uradov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `velvyslanci`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `velvyslanci`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `vlady_sr`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vlady_sr`[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `volebni_kandidati`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `volene_funkcie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (65.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;36;1mSQL (76.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-  [4;35;1mSQL (30.1ms)[0m   [0mCREATE TABLE `political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(100)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124340')[0m
-Migrating to CreateCompanies (20101009124438)
-  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(200), `ico` int(11)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124438')[0m
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-  [4;35;1mSQL (44.1ms)[0m   [0mCREATE TABLE `company_political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `political_party_id` int(11), `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124602')[0m
-Migrating to CreateCloseCompanies (20101009125151)
-  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE `close_companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125151')[0m
-Migrating to CreateAdvantages (20101009125248)
-  [4;35;1mSQL (83.5ms)[0m   [0mCREATE TABLE `advantages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125248')[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `advantages`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `advantages`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `advokati`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `advokati`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `advokati`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `auditori`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `auditori`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `auditori`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `close_companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `close_companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `close_companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `companies`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `company_political_parties`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `danove_ulavy`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `danovi_dlznici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `deblokacie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_kultura`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `dve_percenta`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `dve_percenta`[0m
-  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `eurofondy`[0m
-  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `eurofondy`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `eurofondy`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `europolitika`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `europolitika`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `europolitika`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `funkcionari_stran`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `ine_dotacie`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `justicia_osoby`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `konsolidacna`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `odpustene_clo`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `organisations`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `organisations`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `organisations`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `political_parties`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `political_parties`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `polnodotacie`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `polnodotacie_du`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `poradcovia`[0m
-  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `poradcovia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `poradcovia`[0m
-  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `pozicky_stranam`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `procurements`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `procurements`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `procurements`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `procurements_2`[0m
-  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `procurements_2`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sponzori_politikov`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `sponzori_stran`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `statne_podniky`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (18.8ms)[0m   [0mdescribe `statni_tajomnici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `vedenie_uradov`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `velvyslanci`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `velvyslanci`[0m
-  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `vlady_sr`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `volebni_kandidati`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `volene_funkcie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (76.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;36;1mSQL (58.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-  [4;35;1mSQL (131.6ms)[0m   [0mCREATE TABLE `political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(100)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124340')[0m
-Migrating to CreateCompanies (20101009124438)
-  [4;35;1mSQL (12.7ms)[0m   [0mCREATE TABLE `companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(200), `ico` int(11)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124438')[0m
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-  [4;35;1mSQL (25.2ms)[0m   [0mCREATE TABLE `company_political_parties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `political_party_id` int(11), `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009124602')[0m
-Migrating to CreateCloseCompanies (20101009125151)
-  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `close_companies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11), `close_company_id` int(11)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125151')[0m
-Migrating to CreateAdvantages (20101009125248)
-  [4;35;1mSQL (48.4ms)[0m   [0mCREATE TABLE `advantages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_id` int(11), `period` varchar(10)) ENGINE=InnoDB[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101009125248')[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `advantages`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `advantages`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `advokati`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `advokati`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `advokati`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `auditori`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `auditori`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `auditori`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `close_companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `close_companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `close_companies`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `company_political_parties`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `company_political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `danove_ulavy`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `danovi_dlznici`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `deblokacie`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `deblokacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `deblokacie`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_kultura`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `dve_percenta`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `dve_percenta`[0m
-  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `eurofondy`[0m
-  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `eurofondy`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `eurofondy`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `europolitika`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `europolitika`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `europolitika`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `funkcionari_stran`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `ine_dotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `justicia_osoby`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `konsolidacna`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `konsolidacna`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `odpustene_clo`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `organisations`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `organisations`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `organisations`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `political_parties`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `political_parties`[0m
-  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `polnodotacie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `polnodotacie_du`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `poradcovia`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `poradcovia`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `poradcovia`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `pozicky_stranam`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `procurements`[0m
-  [4;36;1mSQL (3.5ms)[0m   [0;1mdescribe `procurements`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `procurements`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `procurements_2`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `procurements_2`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sponzori_politikov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `sponzori_stran`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `statne_podniky`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `statne_podniky`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `statni_tajomnici`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `vedenie_uradov`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `velvyslanci`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `velvyslanci`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `vlady_sr`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vlady_sr`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `volebni_kandidati`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `volene_funkcie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-Migrating to CreateCompanies (20101009124438)
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-Migrating to CreateCloseCompanies (20101009125151)
-Migrating to CreateAdvantages (20101009125248)
-Migrating to AddEurofondyToAdvantages (20101009143432)
-  [4;36;1mSQL (120.7ms)[0m   [0;1mALTER TABLE `advantages` ADD `eurofondy` float[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101009143432')[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `advantages`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `advantages`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `advantages`[0m
-  [4;36;1mSQL (35.2ms)[0m   [0;1mSHOW FIELDS FROM `advokati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `advokati`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `advokati`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `auditori`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `auditori`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `auditori`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `close_companies`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `close_companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `close_companies`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `company_political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `danove_ulavy`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `danovi_dlznici`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `deblokacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dotacie_kultura`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (36.6ms)[0m   [0mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dve_percenta`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dve_percenta`[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `eurofondy`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `eurofondy`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `europolitika`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `europolitika`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `europolitika`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `funkcionari_stran`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `ine_dotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `justicia_osoby`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `konsolidacna`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `konsolidacna`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `odpustene_clo`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `organisations`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `organisations`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `organisations`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `political_parties`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `political_parties`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `political_parties`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `polnodotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `polnodotacie_du`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `poradcovia`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `poradcovia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `poradcovia`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `pozicky_stranam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `procurements`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `procurements`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `procurements`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `procurements_2`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `procurements_2`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `procurements_2`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `sponzori_politikov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sponzori_stran`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `statne_podniky`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `statne_podniky`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `statni_tajomnici`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (6.8ms)[0m   [0;1mdescribe `vedenie_uradov`[0m
-  [4;35;1mSQL (1.9ms)[0m   [0mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `velvyslanci`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `velvyslanci`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vlady_sr`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `volebni_kandidati`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mEurofondy Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (343.7ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` GROUP BY rok [0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mEurofondy Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (47.6ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = '00203271') GROUP BY rok [0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mCompany Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mEurofondy Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (48.6ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mAdvantage Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.2ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`) VALUES(1, '2004', 1735765.78515625)[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.1ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`) VALUES(1, '2006', 1735765.78515625)[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-Migrating to CreateCompanies (20101009124438)
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-Migrating to CreateCloseCompanies (20101009125151)
-Migrating to CreateAdvantages (20101009125248)
-Migrating to AddEurofondyToAdvantages (20101009143432)
-Migrating to AddIneDotacie (20101009152438)
-  [4;36;1mSQL (78.2ms)[0m   [0;1mALTER TABLE `advantages` ADD `ine_dotacie` float[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101009152438')[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (57.7ms)[0m   [0mSHOW FIELDS FROM `advantages`[0m
-  [4;36;1mSQL (26.5ms)[0m   [0;1mdescribe `advantages`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `advantages`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `advokati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `advokati`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `advokati`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `auditori`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `auditori`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `auditori`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `close_companies`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `close_companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `close_companies`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `company_political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `danove_ulavy`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `danovi_dlznici`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `deblokacie`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dotacie_kultura`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dve_percenta`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dve_percenta`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `eurofondy`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `eurofondy`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `europolitika`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `europolitika`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `europolitika`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `funkcionari_stran`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `ine_dotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `justicia_osoby`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `konsolidacna`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `konsolidacna`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `odpustene_clo`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `organisations`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `organisations`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `organisations`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `political_parties`[0m
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `political_parties`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `polnodotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie`[0m
-  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `polnodotacie_du`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `poradcovia`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `poradcovia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `poradcovia`[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `pozicky_stranam`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `procurements`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `procurements`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `procurements`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `procurements_2`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `procurements_2`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `procurements_2`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `sponzori_politikov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sponzori_stran`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `statne_podniky`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `statne_podniky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `statni_tajomnici`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `vedenie_uradov`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;35;1mSQL (3.1ms)[0m   [0mdescribe `velvyslanci`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `velvyslanci`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `vlady_sr`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `volebni_kandidati`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `volene_funkcie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mCompany Columns (18.6ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mEurofondy Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (50.3ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mSQL (60.4ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mCompany Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mEurofondy Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (53.9ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mIneDotacie Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (19.3ms)[0m   [0mSELECT sum(`ine_dotacie`.vyska_dotacie) AS sum_vyska_dotacie, rok AS rok FROM `ine_dotacie` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mCompany Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mEurofondy Columns (6.4ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (50.0ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mIneDotacie Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (20.4ms)[0m   [0mSELECT sum(`ine_dotacie`.vyska_dotacie) AS sum_vyska_dotacie, rok AS rok FROM `ine_dotacie` WHERE (ico_prijimatela = 203271) GROUP BY rok [0m
-  [4;36;1mAdvantage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.2ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`) VALUES(1, '2004', 1735765.78515625, NULL)[0m
-  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.1ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`) VALUES(1, '2006', 1735765.78515625, NULL)[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
-  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM `companies` [0m
-  [4;36;1mSQL (66.6ms)[0m   [0;1mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 167240) GROUP BY rok [0m
-  [4;35;1mSQL (18.6ms)[0m   [0mSELECT sum(`ine_dotacie`.vyska_dotacie) AS sum_vyska_dotacie, rok AS rok FROM `ine_dotacie` WHERE (ico_prijimatela = 167240) GROUP BY rok [0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.2ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`) VALUES(1, '1999', NULL, 42986.125)[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.1ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`) VALUES(1, '2000', NULL, 39168.8251953125)[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreatePoliticalParties (20101009124340)
-Migrating to CreateCompanies (20101009124438)
-Migrating to CreateCompanyPoliticalParties (20101009124602)
-Migrating to CreateCloseCompanies (20101009125151)
-Migrating to CreateAdvantages (20101009125248)
-Migrating to AddEurofondyToAdvantages (20101009143432)
-Migrating to AddIneDotacie (20101009152438)
-Migrating to AddKonsolidacna (20101009154122)
-  [4;36;1mSQL (153.4ms)[0m   [0;1mALTER TABLE `advantages` ADD `konsolidacna` float[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101009154122')[0m
-Migrating to AddOdpusteneClo (20101009154156)
-  [4;36;1mSQL (48.9ms)[0m   [0;1mALTER TABLE `advantages` ADD `odpustene_clo` float[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101009154156')[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `advantages`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `advantages`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `advantages`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `advokati`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `advokati`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `advokati`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `asistenti_poslancov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `asistenti_poslancov`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `auditori`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `auditori`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `auditori`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `close_companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `close_companies`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `close_companies`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `companies`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `companies`[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `company_political_parties`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `company_political_parties`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `danove_ulavy`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `danove_ulavy`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `danovi_dlznici`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `danovi_dlznici`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `dary_statnym_instituciam`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `dary_statnym_instituciam`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `deblokacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `deblokacie`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `dotacie_kultura`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_kultura`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `dotacie_samosprava`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dotacie_samosprava`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `dotacie_vystavba`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `dotacie_vystavba`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `dve_percenta`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `dve_percenta`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `dve_percenta`[0m
-  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `eurofondy`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `eurofondy`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `europolitika`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `europolitika`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `europolitika`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `funkcionari_stran`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `funkcionari_stran`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `ine_dotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `ine_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `justicia_osoby`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `justicia_osoby`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `komisie_pre_dotacie`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `komisie_pre_dotacie`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `konsolidacna`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `konsolidacna`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `konsolidacna`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `obcianske_zdruzenia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `obcianske_zdruzenia`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `odpustene_clo`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `organisations`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `organisations`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `organisations`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `political_parties`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `political_parties`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `political_parties`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `polnodotacie`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `polnodotacie`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `polnodotacie`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `polnodotacie_du`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie_du`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `poradcovia`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `poradcovia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `poradcovia`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `pozemkovy_fond`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `pozemkovy_fond`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `pozicky_stranam`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `pozicky_stranam`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `privatizacia_predaje`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_predaje`[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `privatizacia_rozhodnutia`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `procurements`[0m
-  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `procurements`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `procurements`[0m
-  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `procurements_2`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `procurements_2`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `procurements_2`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `sponzori_politikov`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `sponzori_politikov`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `sponzori_stran`[0m
-  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `sponzori_stran`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `statne_podniky`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `statne_podniky`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `statne_podniky`[0m
-  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `statni_tajomnici`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `statni_tajomnici`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `stranicke_clenske_prispevky`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `vedenie_ministerstiev`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_ministerstiev`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `vedenie_rozpoctovych_org`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `vedenie_uradov`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `vedenie_uradov`[0m
-  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `velvyslanci`[0m
-  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `velvyslanci`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `velvyslanci`[0m
-  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `verejne_obstaravania_mib`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `vlady_sr`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `vlady_sr`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `volebni_kandidati`[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `volebni_kandidati`[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `volene_funkcie`[0m
-  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `volene_funkcie`[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `volene_funkcie`[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM `companies` [0m
-  [4;35;1mCompany Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `companies`[0m
-  [4;36;1mEurofondy Columns (55.0ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
-  [4;35;1mSQL (48.9ms)[0m   [0mSELECT sum(`eurofondy`.vyska_grantu) AS sum_vyska_grantu, rok AS rok FROM `eurofondy` WHERE (ico_prijimatela = 167240) GROUP BY rok [0m
-  [4;36;1mIneDotacie Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `ine_dotacie`[0m
-  [4;35;1mSQL (18.1ms)[0m   [0mSELECT sum(`ine_dotacie`.vyska_dotacie) AS sum_vyska_dotacie, rok AS rok FROM `ine_dotacie` WHERE (ico_prijimatela = 167240) GROUP BY rok [0m
-  [4;36;1mOdpusteneClo Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `odpustene_clo`[0m
-  [4;35;1mSQL (8.4ms)[0m   [0mSELECT sum(`odpustene_clo`.celkova_odpustena_suma) AS sum_celkova_odpustena_suma, rok AS rok FROM `odpustene_clo` WHERE (ico) GROUP BY rok [0m
-  [4;36;1mAdvantage Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `advantages`[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.2ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '1999', NULL, 42986.125, NULL, 28361.4482050836)[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.2ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '2000', NULL, 39168.8251953125, NULL, 131281.749206543)[0m
-  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.1ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '1996', NULL, NULL, NULL, 3199352.17355919)[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.1ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '1997', NULL, NULL, NULL, 106342.459676981)[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.1ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '1998', NULL, NULL, NULL, 8236.83868861198)[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.1ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '2003', NULL, NULL, NULL, 160729.070839062)[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
-  [4;36;1mAdvantage Create (0.1ms)[0m   [0;1mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '2004', NULL, NULL, NULL, 180836.888220761)[0m
-  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mAdvantage Create (0.1ms)[0m   [0mINSERT INTO `advantages` (`company_id`, `period`, `eurofondy`, `ine_dotacie`, `konsolidacna`, `odpustene_clo`) VALUES(1, '2005', NULL, NULL, NULL, 56745.0034103394)[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (625.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (93.8ms)[0m   [0;1mALTER TABLE `company_political_parties` ADD `sum` float[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101009145103')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `advantages`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mdescribe `advantages`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `advantages`[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mSHOW FIELDS FROM `advokati`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `advokati`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `advokati`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `asistenti_poslancov`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `asistenti_poslancov`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `asistenti_poslancov`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `auditori`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `auditori`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `auditori`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `close_companies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `close_companies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `close_companies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `companies`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mdescribe `companies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `companies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `company_political_parties`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `company_political_parties`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `company_political_parties`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `danove_ulavy`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `danove_ulavy`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `danove_ulavy`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `danovi_dlznici`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `danovi_dlznici`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `danovi_dlznici`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `dary_statnym_instituciam`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `dary_statnym_instituciam`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `dary_statnym_instituciam`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `deblokacie`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `deblokacie`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `deblokacie`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_kultura`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `dotacie_kultura`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `dotacie_kultura`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `dotacie_samosprava`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `dotacie_samosprava`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `dotacie_samosprava`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `dotacie_vystavba`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `dotacie_vystavba`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `dotacie_vystavba`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `dve_percenta`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `dve_percenta`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `dve_percenta`[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mSHOW FIELDS FROM `eurofondy`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `eurofondy`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `eurofondy`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `europolitika`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `europolitika`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `europolitika`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `funkcionari_stran`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `funkcionari_stran`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `funkcionari_stran`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `ine_dotacie`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `ine_dotacie`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `ine_dotacie`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `justicia_osoby`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `justicia_osoby`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `justicia_osoby`[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSHOW FIELDS FROM `komisie_pre_dotacie`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `komisie_pre_dotacie`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `komisie_pre_dotacie`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `konsolidacna`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `konsolidacna`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `konsolidacna`[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSHOW FIELDS FROM `obcianske_zdruzenia`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `obcianske_zdruzenia`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `obcianske_zdruzenia`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `odpustene_clo`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `odpustene_clo`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `odpustene_clo`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `organisations`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `organisations`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `organisations`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `political_parties`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `political_parties`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `political_parties`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `polnodotacie`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `polnodotacie`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `polnodotacie`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `polnodotacie_du`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `polnodotacie_du`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `polnodotacie_du`[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSHOW FIELDS FROM `poradcovia`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `poradcovia`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `poradcovia`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `pozemkovy_fond`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `pozemkovy_fond`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `pozemkovy_fond`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `pozicky_stranam`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `pozicky_stranam`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `pozicky_stranam`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `privatizacia_predaje`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `privatizacia_predaje`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `privatizacia_predaje`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `privatizacia_rozhodnutia`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `privatizacia_rozhodnutia`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `privatizacia_rozhodnutia`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `procurements`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `procurements`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `procurements`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW FIELDS FROM `procurements_2`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `procurements_2`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `procurements_2`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `sponzori_politikov`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `sponzori_politikov`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `sponzori_politikov`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `sponzori_stran`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `sponzori_stran`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `sponzori_stran`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `statne_podniky`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `statne_podniky`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `statne_podniky`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `statni_tajomnici`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `statni_tajomnici`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `statni_tajomnici`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `stranicke_clenske_prispevky`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `stranicke_clenske_prispevky`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `stranicke_clenske_prispevky`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `vedenie_ministerstiev`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `vedenie_ministerstiev`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `vedenie_ministerstiev`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `vedenie_rozpoctovych_org`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `vedenie_rozpoctovych_org`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `vedenie_rozpoctovych_org`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `vedenie_uradov`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `vedenie_uradov`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `vedenie_uradov`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `velvyslanci`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `velvyslanci`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `velvyslanci`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `verejne_obstaravania_mib`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `verejne_obstaravania_mib`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `verejne_obstaravania_mib`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `vlady_sr`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `vlady_sr`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `vlady_sr`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `volebni_kandidati`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `volebni_kandidati`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `volebni_kandidati`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `volene_funkcie`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `volene_funkcie`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `volene_funkcie`[0m

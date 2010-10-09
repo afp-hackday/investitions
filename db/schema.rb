@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009154156) do
+ActiveRecord::Schema.define(:version => 20101009155649) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.float   "ine_dotacie"
     t.float   "konsolidacna"
     t.float   "odpustene_clo"
+    t.float   "polnodotacie"
+    t.float   "privatizacia"
+    t.float   "obstaravania"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
@@ -90,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.integer "political_party_id"
     t.integer "company_id"
     t.string  "period",             :limit => 10
+    t.float   "sum"
   end
 
   create_table "danove_ulavy", :id => false, :force => true do |t|
@@ -488,8 +492,8 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.string "psc_prijimatela",         :limit => 500
     t.string "mesto_prijimatela",       :limit => 500
     t.string "region",                  :limit => 500
-    t.string "pozadovana_suma",         :limit => 500
-    t.string "suma_dotacie",            :limit => 500
+    t.float  "pozadovana_suma"
+    t.float  "suma_dotacie"
     t.string "mena",                    :limit => 500
     t.string "rok",                     :limit => 500
     t.string "ucel_dotacie",            :limit => 500
@@ -589,19 +593,20 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.string "_record_id",            :limit => 500
     t.string "privatizovana_firma",   :limit => 500
     t.string "adresa_privatizovanej", :limit => 500
-    t.string "binalncne_ocenenie",    :limit => 500
+    t.float  "binalncne_ocenenie"
     t.string "podiel",                :limit => 500
     t.string "firma_kupujuceho",      :limit => 500
     t.string "meno_kupujuceho",       :limit => 500
     t.string "priezvisko_kupujuceho", :limit => 500
     t.string "titul_kupujuceho",      :limit => 500
     t.string "adresa_kupujuceho",     :limit => 500
-    t.string "kupna_cena",            :limit => 500
+    t.float  "kupna_cena"
     t.string "mena",                  :limit => 500
     t.string "datum_predaja",         :limit => 500
     t.string "forma_privatizacie",    :limit => 500
     t.string "predavajuci",           :limit => 500
     t.string "poznamka",              :limit => 500
+    t.string "rok",                   :limit => 500
   end
 
   create_table "privatizacia_rozhodnutia", :id => false, :force => true do |t|
@@ -636,7 +641,7 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.string "bulletin_id",            :limit => 500
     t.string "procurement_id",         :limit => 500
     t.string "procurement_subject",    :limit => 500
-    t.string "price",                  :limit => 500
+    t.float  "price"
     t.string "currency",               :limit => 500
     t.string "is_VAT_included",        :limit => 500
     t.string "source_url",             :limit => 500
@@ -659,7 +664,7 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
     t.string "supplier_company_name", :limit => 500
     t.string "supplier_region",       :limit => 500
     t.string "procurement_subject",   :limit => 500
-    t.string "price",                 :limit => 500
+    t.float  "price"
     t.string "currency",              :limit => 500
     t.string "is_VAT_included",       :limit => 500
     t.string "customer_ico_evidence", :limit => 500
@@ -692,21 +697,21 @@ ActiveRecord::Schema.define(:version => 20101009154156) do
   end
 
   create_table "sponzori_stran", :id => false, :force => true do |t|
-    t.string "_record_id",       :limit => 500
-    t.string "meno_darcu",       :limit => 500
-    t.string "priezvisko_darcu", :limit => 500
-    t.string "titul_darcu",      :limit => 500
-    t.string "firma_darcu",      :limit => 500
-    t.string "ico_darcu",        :limit => 500
-    t.float  "hodnota_daru"
-    t.string "mena",             :limit => 500
-    t.string "adresa_darcu",     :limit => 500
-    t.string "psc_darcu",        :limit => 500
-    t.string "mesto_darcu",      :limit => 500
-    t.string "strana",           :limit => 500
-    t.string "rok",              :limit => 500
-    t.string "datum_prijatia",   :limit => 500
-    t.string "poznamka",         :limit => 500
+    t.string  "_record_id",       :limit => 500
+    t.string  "meno_darcu",       :limit => 500
+    t.string  "priezvisko_darcu", :limit => 500
+    t.string  "titul_darcu",      :limit => 500
+    t.string  "firma_darcu",      :limit => 500
+    t.integer "ico_darcu"
+    t.float   "hodnota_daru"
+    t.string  "mena",             :limit => 500
+    t.string  "adresa_darcu",     :limit => 500
+    t.string  "psc_darcu",        :limit => 500
+    t.string  "mesto_darcu",      :limit => 500
+    t.string  "strana",           :limit => 500
+    t.string  "rok",              :limit => 500
+    t.string  "datum_prijatia",   :limit => 500
+    t.string  "poznamka",         :limit => 500
   end
 
   add_index "sponzori_stran", ["strana"], :name => "sponzori_stran_strana"
