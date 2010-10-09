@@ -9,11 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009125248) do
+ActiveRecord::Schema.define(:version => 20101009143432) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
     t.string  "period",     :limit => 10
+    t.float   "eurofondy"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
@@ -265,14 +266,14 @@ ActiveRecord::Schema.define(:version => 20101009125248) do
     t.string "adresa_prijimatela",      :limit => 500
     t.string "mesto_prijimatela",       :limit => 500
     t.string "psc_prijimatela",         :limit => 500
-    t.string "pozadovana_suma",         :limit => 500
-    t.string "vyska_grantu",            :limit => 500
-    t.string "schvalena_suma",          :limit => 500
-    t.string "vlastne_zdroje",          :limit => 500
-    t.string "celkovy_rozpocet",        :limit => 500
+    t.float  "pozadovana_suma"
+    t.float  "vyska_grantu"
+    t.float  "schvalena_suma"
+    t.float  "vlastne_zdroje"
+    t.float  "celkovy_rozpocet"
     t.string "nesplnenie_podmienok",    :limit => 500
-    t.string "vyplatena_suma",          :limit => 500
-    t.string "cerpana_suma",            :limit => 500
+    t.float  "vyplatena_suma"
+    t.float  "cerpana_suma"
     t.string "mena",                    :limit => 500
     t.string "podiel_prijimatela",      :limit => 500
     t.string "poskytovatel_dotacie",    :limit => 500
@@ -694,7 +695,7 @@ ActiveRecord::Schema.define(:version => 20101009125248) do
     t.string "titul_darcu",      :limit => 500
     t.string "firma_darcu",      :limit => 500
     t.string "ico_darcu",        :limit => 500
-    t.string "hodnota_daru",     :limit => 500
+    t.float  "hodnota_daru"
     t.string "mena",             :limit => 500
     t.string "adresa_darcu",     :limit => 500
     t.string "psc_darcu",        :limit => 500
@@ -704,6 +705,8 @@ ActiveRecord::Schema.define(:version => 20101009125248) do
     t.string "datum_prijatia",   :limit => 500
     t.string "poznamka",         :limit => 500
   end
+
+  add_index "sponzori_stran", ["strana"], :name => "sponzori_stran_strana"
 
   create_table "statne_podniky", :id => false, :force => true do |t|
     t.string "_record_id",         :limit => 500
