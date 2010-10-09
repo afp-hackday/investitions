@@ -18,7 +18,7 @@ class Company < ActiveRecord::Base
       advantages[year][:ine_dotacie] = sum
     end
 
-    odpustene_clo = OdpusteneClo.sum(:celkova_odpustena_suma, :group => :rok, :conditions => ['ico', self[:ico]])
+    odpustene_clo = OdpusteneClo.sum(:celkova_odpustena_suma, :group => :rok, :conditions => ['ico = ?', self[:ico]])
     odpustene_clo.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
       advantages[year][:odpustene_clo] = sum
@@ -51,6 +51,7 @@ class Company < ActiveRecord::Base
     obstaravania2 = Obstaravania2.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
     obstaravania2.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
+      advantages[year][:obstaravania] = 0 if advantages[year][:obstaravania].nil?
       advantages[year][:obstaravania] += sum
     end
 
