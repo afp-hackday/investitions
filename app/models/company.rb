@@ -87,16 +87,23 @@ class Company < ActiveRecord::Base
 
     #print "counting first searched_name: #{searched_name}....."
     result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+    best_result_count = result_count
+    best_result_term = searched_name
+
     #puts "done"
 
     while (result_count > 1 && name_parts.size > 0)
       searched_name = searched_name + " " + name_parts.shift
       #print "counting next searched_name: #{searched_name}......"
       result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+      if(result_count < best_result_count)
+        best_result_count = result_count
+        best_result_term = searched_name
+      end
       #puts "done"
     end
 
-    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
+    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
 
     if (result.size == 0)
       puts "--------------nikoho sme nenasli------------------"
@@ -111,13 +118,19 @@ class Company < ActiveRecord::Base
       {"ico" => [], "evidence" => nil} if address.nil?
       address_parts = address.split(' ')
       searched_address = address_parts.shift
-      result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
+      result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{searched_address}%"]
+      best_address_count = result_count
+      best_address_term = searched_address
       while (result_count > 1 && address_parts.size > 0)
         searched_address = searched_address + " " + address_parts.shift
-        result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
+        result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{searched_address}%"]
+        if(result_count < best_address_count)
+          best_address_count = result_count
+          best_address_term = searched_address
+        end
       end
 
-      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{searched_name}%", "#{searched_address}%"]
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
       if (result.size > 1)
         puts '----------aj s adresou prilis vela-----------'
         nil
