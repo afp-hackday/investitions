@@ -187,7 +187,7 @@ class Company < ActiveRecord::Base
       name = item.firma_dlznika == "" ? "#{item.meno_dlznika} #{item.priezvisko_dlznika}":item.firma_dlznika
       print "looking for #{name}@#{item.mesto_dlznika}..."
       ico = Company.find_ico_by_name(name, "#%{item.mesto_dlznika}")
-      SponzoriStran.update(item._record_id, {:ico_dlznika => ico}) unless ico.nil?
+      Konsolidacna.update(item._record_id, {:ico_dlznika => ico}) unless ico.nil?
       puts "finished - #{ico}"
     end
     puts "finished"
