@@ -30,9 +30,15 @@ class Company < ActiveRecord::Base
       advantages[year][:konsolidacne] = sum
     end
 
+    polnodotacie = Polnodotacie.sum(:dlzna_suma, :group => :rok, :conditions => ['ico_prijimatela = ?', self[:ico]])
+    polnodotacie.each do |year, sum|
+      advantages[year] = {} if advantages[year].nil?
+      advantages[year][:polnodotacie] = sum
+    end
+
 
     advantages.each do |year, sum|
-      Advantage.create(:company_id => self[:id], :period => year, :eurofondy => sum[:eurofondy], :ine_dotacie => sum[:ine_dotacie], :odpustene_clo => sum[:odpustene_clo], :konsolidacne => sum[:konsolidacne])
+      Advantage.create(:company_id => self[:id], :period => year, :eurofondy => sum[:eurofondy], :ine_dotacie => sum[:ine_dotacie], :odpustene_clo => sum[:odpustene_clo], :konsolidacne => sum[:konsolidacne], :polnodotacie => sum[:polnodotacie])
     end
   end
 end
