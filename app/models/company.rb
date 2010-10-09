@@ -43,13 +43,13 @@ class Company < ActiveRecord::Base
     end
 
     obstaravania = Obstaravania.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
-    privatizacie.each do |year, sum|
+    obstaravania.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
       advantages[year][:obstaravania] = sum
     end
 
     obstaravania2 = Obstaravania2.sum(:price, :group => :year, :conditions => ['supplier_ico= ?', self[:ico]])
-    privatizacie.each do |year, sum|
+    obstaravania2.each do |year, sum|
       advantages[year] = {} if advantages[year].nil?
       advantages[year][:obstaravania] += sum
     end
