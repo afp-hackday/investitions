@@ -13,8 +13,9 @@ ActiveRecord::Schema.define(:version => 20101009143432) do
 
   create_table "advantages", :force => true do |t|
     t.integer "company_id"
-    t.string  "period",     :limit => 10
+    t.string  "period",      :limit => 10
     t.float   "eurofondy"
+    t.float   "ine_dotacie"
   end
 
   create_table "advokati", :id => false, :force => true do |t|
