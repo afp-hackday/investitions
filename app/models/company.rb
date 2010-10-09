@@ -69,6 +69,7 @@ class Company < ActiveRecord::Base
                when '' then concat(meno_darcu, ' ', priezvisko_darcu) else firma_darcu
       end) as meno
     from
-      sponzori_stran"
+      sponzori_stran
+    group by meno"
   end
 end
