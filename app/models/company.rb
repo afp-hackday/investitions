@@ -112,9 +112,9 @@ class Company < ActiveRecord::Base
       end
       #puts "done"
     end
-    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
+    result = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
 
-    if (result.size == 0)
+    if (result == 0)
       #puts "--------------nikoho sme nenasli------------------"
       #ideas:
       # try to make fulltext search against name
@@ -122,7 +122,7 @@ class Company < ActiveRecord::Base
       # try to make fulltext search against regions to find-out region and try the main loop again
       #puts fields[1]
       nil
-    elsif (result.size > 1)
+    elsif (result > 1)
       #puts "--------------stale prilis vela, idem na adresu------------------"
       if(address.nil? || address == "" || address == " ")
 	puts "bad address input"
@@ -149,20 +149,21 @@ class Company < ActiveRecord::Base
         end
       end
 
-      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
-      if (result.size > 1)
+      result = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
+      if (result > 1)
         #puts '----------aj s adresou prilis vela-----------'
         nil
-      elsif (result.size == 1)
+      elsif (result == 1)
         #puts "--------mame ICO------------"
-        result[0].ico
+        Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"][0].ico
       else
         #puts '----------a s adresou sme nikoho nenasli-----------'
         nil
       end
     else
       #puts "--------------ICO FOUND------------------"
-      result[0].ico
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"][0].ico
+
     end
   end
 
