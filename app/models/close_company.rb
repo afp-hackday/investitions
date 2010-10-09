@@ -6,7 +6,7 @@ class CloseCompany < ActiveRecord::Base
     connection.execute("truncate table close_companies")
 
     Company.all.each do |company|
-      companies = FoafProxy.related_companies(name)
+      companies = FoafProxy.related_companies(company.name)
       companies.each do |rel_comp|
         ico = Company.find_ico_by_name(rel_comp, nil)
         unless ico.nil?
