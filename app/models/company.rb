@@ -79,15 +79,15 @@ class Company < ActiveRecord::Base
     name_parts = name.split(' ')
     searched_name = name_parts.shift
 
-    print "counting first searched_name: #{searched_name}....."
+    #print "counting first searched_name: #{searched_name}....."
     result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-    puts "done"
+    #puts "done"
 
     while (result_count > 1 && name_parts.size > 0)
       searched_name = searched_name + " " + name_parts.shift
-      print "counting next searched_name: #{searched_name}......"
+      #print "counting next searched_name: #{searched_name}......"
       result_count = Company.count_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-      puts "done"
+      #puts "done"
     end
 
     result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
@@ -123,12 +123,12 @@ class Company < ActiveRecord::Base
         nil
       end
     else
-      #puts "--------------ICO FOUND------------------"
+      puts "--------------ICO FOUND------------------"
       result[0].ico
     end
   end
 
-  def self.map_ico_for_eurofondy
+  def self.map_ico_for_sponzori
     puts "starting..."
     SponzoriStran.all(:conditions => ["ico_darcu = ?", ""]).each do |item|
       print "looking for #{item.firma_darcu}..."
