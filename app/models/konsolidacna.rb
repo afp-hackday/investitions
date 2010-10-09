@@ -1,3 +1,4 @@
 class Konsolidacna < ActiveRecord::Base
-  set_table_name :konsolidacna
+   set_primary_key :_record_id
+   set_table_name :konsolidacna
 end
