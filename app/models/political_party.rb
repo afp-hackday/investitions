@@ -1,7 +1,7 @@
 class PoliticalParty < ActiveRecord::Base
 
   def self.rebuild
-    PoliticalParty.delete_all
+    connection.execute "truncate table political_parties"
     connection.execute "INSERT INTO political_parties(name)
     select
       distinct(strana)

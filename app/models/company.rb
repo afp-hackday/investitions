@@ -61,7 +61,7 @@ class Company < ActiveRecord::Base
   end
 
   def self.rebuild
-    Company.delete_all
+    connection.execute "truncate table companies"
     connection.execute "INSERT INTO companies (id, ico, name)
     select
       null, ico_darcu,
@@ -70,6 +70,6 @@ class Company < ActiveRecord::Base
       end) as meno
     from
       sponzori_stran
-    group by meno"
+    group by ico_darcu"
   end
 end
