@@ -33,11 +33,13 @@ class FoafProxy
   end
 
   def self.parse_out_own(doc, ommit)
-    return [] if doc.css('.match .related a').first['href'].match(/\/#{ommit}*/)
-    results = doc.css('.match .related a').collect {|item| item.inner_text }
+    own_array = doc.css('.match .related a')
+    return [] if own_array.empty?
+    return [] if own_array.first['href'].match(/\/#{ommit}*/)
+    results = own_array.collect {|item| item.inner_text }
   end
 end
 
-#companies = FoafProxy.related_companies("Microsoft")
-#companies = FoafProxy.related_companies("PhDr. Pavol Rusko")
-#puts companies.inspect
+companies = FoafProxy.related_companies("Microsoft")
+#companies = FoafProxy.related_companies("blablabla")
+puts companies.inspect
