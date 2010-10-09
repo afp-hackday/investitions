@@ -155,15 +155,16 @@ class Company < ActiveRecord::Base
         nil
       elsif (result == 1)
         #puts "--------mame ICO------------"
-        Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"][0].ico
+        result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
+        result[0].ico
       else
         #puts '----------a s adresou sme nikoho nenasli-----------'
         nil
       end
     else
       #puts "--------------ICO FOUND------------------"
-      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"][0].ico
-
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
+      result[0].ico
     end
   end
 
