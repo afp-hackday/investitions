@@ -124,7 +124,10 @@ class Company < ActiveRecord::Base
       nil
     elsif (result.size > 1)
       #puts "--------------stale prilis vela, idem na adresu------------------"
-      {"ico" => [], "evidence" => nil} if address.nil?
+      if(address.nil? || address == "" || address == " ")
+	puts "bad address input"
+        return nil
+      end
       address_parts = address.split(/\s|,/)
       searched_address = address_parts.shift
       result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{searched_address}%"]
