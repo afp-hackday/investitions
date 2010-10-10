@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   has_many :advantages
-  has_and_belongs_to_many :political_parties
+
+  has_and_belongs_to_many :political_parties, :join_table => "company_political_parties"
 
   has_many :close_companies_as_source, :foreign_key => 'company_id', :class_name => 'CloseCompany'
 

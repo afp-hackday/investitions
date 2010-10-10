@@ -1,5 +1,5 @@
 class PoliticalParty < ActiveRecord::Base
-  has_and_belongs_to_many :companies
+  has_and_belongs_to_many :companies, :join_table => "company_political_parties"
 
   def self.rebuild
     connection.execute "truncate table political_parties"
@@ -17,7 +17,7 @@ class PoliticalParty < ActiveRecord::Base
     relevant_companies = relevant_companies.uniq
     relevant_companies.each do |company|
       company.advantages.each do |advantage|
-        profits[advantage.year] += advantage.eurofondy +
+        profits[advantage.period] += advantage.eurofondy +
                 advantage.ine_dotacie +
                 advantage.konsolidacna +
                 advantage.odpustene_clo +
