@@ -1,0 +1,57 @@
+<div id='fund_overall'></div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+      chart = new Highcharts.Chart({
+          chart: {
+              renderTo: 'fund_overall', 
+              defaultSeriesType: 'area'
+          },
+          title: {
+              text: 'Výnosy politických fondov'
+          },
+          xAxis: {
+          },
+          yAxis: {
+              title: {
+                  text: 'Výnos fondu v EUR'
+              },
+          },
+          tooltip: {
+              formatter: function() {
+                  return this.series.name +' zarobil <b>'+
+                      Highcharts.numberFormat(this.y, 0, null, ' ') +'</b><br/>EUR v '+ this.x;
+              }
+          },
+          plotOptions: {
+              area: {
+                  pointStart: 1994,
+                  marker: {
+                      enabled: false,
+                      symbol: 'circle',
+                      radius: 2,
+                      states: {
+                          hover: {
+                              enabled: true
+                          }
+                      }
+                  },
+                  events: {
+                    'click': function() { alert(this.name) }
+                  }
+              }
+          },
+          series: [
+                    <% @party_profits.each do |party, profits| %>
+                      {
+                        name: '<%= party %>',
+                        data: <%= profits.inspect %>
+                      },
+                    <% end %>
+        ]
+      });
+  });
+</script>
+
+
+<%= render :partial => "party_detail", :collection => @parties %>
