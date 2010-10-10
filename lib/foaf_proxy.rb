@@ -40,6 +40,6 @@ class FoafProxy
   end
 end
 
-companies = FoafProxy.related_companies("Microsoft")
+#companies = FoafProxy.related_companies("Microsoft")
 #companies = FoafProxy.related_companies("blablabla")
-puts companies.inspect
+#puts companies.inspect
