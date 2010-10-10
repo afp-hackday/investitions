@@ -290,6 +290,53 @@ class Company < ActiveRecord::Base
   end
 
 
+  def investment
+    CompanyPoliticalParty.sum(:sum, :conditions => ['company_id = ?', self[:id]])
+  end
+
+  def returns
+    related_companies_ids = close_companies.collect { |c| c.id } 
+    related_companies_ids << self[:id]
+
+    profits = 0
+    Advantage.find(:all, :conditions => {:company_id => related_companies_ids}).each do |advantage|
+      profits += advantage.eurofondy +
+              advantage.ine_dotacie +
+              advantage.konsolidacna +
+              advantage.odpustene_clo +
+              advantage.polnodotacie +
+              advantage.privatizacia +
+              advantage.obstaravania
+    end
+
+    profits
+  end
+
+  def related_companies_names
+    related_companies_ids = close_companies.collect { |c| c.id } 
+    related_companies_ids << self[:id]
+
+    Company.all(:conditions => {:id => related_companies_ids})
+
+  end
+
+  def portfolio
+    related_companies_ids = close_companies.collect { |c| c.id } 
+    related_companies_ids << self[:id]
+
+    profits = Hash.new(0)
+
+    Advantage.find(:all, :conditions => {:company_id => related_companies_ids}).each do |advantage|
+      profits[:eurofondy] += advantage.eurofondy
+      profits[:ine_dotacie] += advantage.ine_dotacie
+      profits[:odpustene_clo] += advantage.odpustene_clo
+      profits[:polnodotacie] += advantage.polnodotacie
+      profits[:privatizacia] += advantage.privatizacia
+      profits[:obstaravania] += advantage.obstaravania
+    end
+
+    profits
+  end
 
 
 

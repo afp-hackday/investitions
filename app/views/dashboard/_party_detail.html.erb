@@ -77,13 +77,17 @@
 					text: 'Firmy ktoré už do fondu investovali'
 				},
 				xAxis: {
-					categories: ['Slovnaft', 'J&T', 'Datalan', 'Eset', 'BVS']
+                    categories: <%= party_detail.companies.collect { |c| c.name }.inspect %>,
+                    labels: {
+                      rotation: 90,
+                      align: 'left'
+                    }
 				},
 				yAxis: {
 					min: 0,
 					title: {
 						text: 'Výnosy v EUR'
-					}
+                        }
 				},
 				legend: {
 					style: {
@@ -100,16 +104,35 @@
 				tooltip: {
 					formatter: function() {
 						return '<b>'+ this.x +'</b><br/>'+
-							 this.series.name +': '+ this.y +'<br/>'+
-							 'Total: '+ this.point.stackTotal;
+							 this.series.name +': '+ Math.pow(10, this.y)
 					}
 				},
                 series: [{
 					name: 'Investované',
-					data: [5, 3, 4, 7, 2]
+                    data: [
+                      <% party_detail.companies.each do |c| %>
+                        {
+                          y: <%= Math.log10(c.investment + 0.1) %>,
+                          url: '/companies/index/<%= c.id %>'
+                        },
+                      <% end %>
+                    ]
 				}, {
 					name: 'Zarobené',
-					data: [2, 2, 3, 2, 1]
+                    cursor: 'pointer',
+                      point: {
+                        events: {
+                          click: function() { location.href = this.options.url }
+                        }
+                      },
+                    data: [
+                      <% party_detail.companies.each do |c| %>
+                        {
+                          y: <%= Math.log10(c.returns + 0.1) %>,
+                          url: '/companies/index/<%= c.name %>'
+                        },
+                      <% end %>
+                    ]
 				}]
 			});
 			
