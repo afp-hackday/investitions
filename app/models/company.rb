@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   has_many :advantages
-  has_and_belongs_to_many :political_parties
+
+  has_and_belongs_to_many :political_parties, :join_table => "company_political_parties"
 
   has_many :close_companies_as_source, :foreign_key => 'company_id', :class_name => 'CloseCompany'
 
@@ -101,14 +102,14 @@ class Company < ActiveRecord::Base
     name_parts = name.split(/\s|,/)
     searched_name = name_parts.shift
 
-    result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-    puts "#{searched_name}------------->#{result_count}"
-    best_result_count = result_count
+    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? LIMIT 2", "#{searched_name}%" ]
+    puts "#{searched_name}------------->#{result.size}"
+    best_result_count = result.size
     best_result_term = searched_name
 
     #puts "done"
 
-    while (result_count > 1 && name_parts.size > 0)
+    while (result.size > 1 && name_parts.size > 0)
       next_part = name_parts.shift
       if(next_part == "")
         searched_name = searched_name + ","
@@ -116,17 +117,17 @@ class Company < ActiveRecord::Base
         searched_name = searched_name + " " + next_part
       end
       #print "counting next searched_name: #{searched_name}......"
-      result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{searched_name}%"]
-      puts "#{searched_name}--------->#{result_count}"
-      if(result_count > 0 && result_count < best_result_count)
-        best_result_count = result_count
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? LIMIT 2", "#{searched_name}%"]
+      puts "#{searched_name}--------->#{result.size}"
+      if(result.size > 0 && result.size < best_result_count)
+        best_result_count = result.size
         best_result_term = searched_name
       end
       #puts "done"
     end
-    result = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
+    result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? LIMIT 2", "#{best_result_term}%"]
 
-    if (result == 0)
+    if (result.size == 0)
       #puts "--------------nikoho sme nenasli------------------"
       #ideas:
       # try to make fulltext search against name
@@ -134,7 +135,7 @@ class Company < ActiveRecord::Base
       # try to make fulltext search against regions to find-out region and try the main loop again
       #puts fields[1]
       nil
-    elsif (result > 1)
+    elsif (result.size > 1)
       #puts "--------------stale prilis vela, idem na adresu------------------"
       if(address.nil? || address == "" || address == " ")
 	puts "bad address input"
@@ -142,32 +143,32 @@ class Company < ActiveRecord::Base
       end
       address_parts = address.split(/\s|,/)
       searched_address = address_parts.shift
-      result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{searched_address}%"]
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ? LIMIT 2", "#{best_result_term}%", "#{searched_address}%"]
       #puts result_count
-      best_address_count = result_count
+      best_address_count = result.size
       best_address_term = searched_address
-      while (result_count > 1 && address_parts.size > 0)
+      while (result.size > 1 && address_parts.size > 0)
         next_part = address_parts.shift
         if(next_part == "")
           searched_address = searched_address + ","
         else
           searched_address = searched_address + " " + next_part
         end
-        result_count = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{searched_address}%"]
+        result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ? LIMIT 2", "#{best_result_term}%", "#{searched_address}%"]
         #puts "#{searched_address} -----> #{result_count}"
-        if(result_count > 0 && result_count < best_address_count)
-          best_address_count = result_count
+        if(result.size > 0 && result.size < best_address_count)
+          best_address_count = result.size
           best_address_term = searched_address
         end
       end
 
-      result = Company.count_by_sql ["SELECT count(ico) FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
-      if (result > 1)
+      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ? LIMIT 2", "#{best_result_term}%", "#{best_address_term}%"]
+      if (result.size > 1)
         #puts '----------aj s adresou prilis vela-----------'
         nil
-      elsif (result == 1)
+      elsif (result.size == 1)
         #puts "--------mame ICO------------"
-        result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
+        #result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ? AND address LIKE ?", "#{best_result_term}%", "#{best_address_term}%"]
         result[0].ico
       else
         #puts '----------a s adresou sme nikoho nenasli-----------'
@@ -175,7 +176,7 @@ class Company < ActiveRecord::Base
       end
     else
       #puts "--------------ICO FOUND------------------"
-      result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
+      #result = Company.find_by_sql ["SELECT ico FROM organisations WHERE name LIKE ?", "#{best_result_term}%"]
       result[0].ico
     end
   end
@@ -254,7 +255,7 @@ class Company < ActiveRecord::Base
 
   def self.map_ico_for_privatizacie
     puts "starting..."
-    Privatizacie.all(:conditions => ["ico_kupujuceho = ? OR ico_kupujuceho = ?", "", 0]).each do |item|
+    Privatizacie.all(:conditions => ["ico_kupujuceho is null"]).each do |item|
       name = item.firma_kupujuceho == "" ? "#{item.meno_kupujuceho} #{item.priezvisko_kupujuceho}":item.firma_kupujuceho
       print "looking for #{name}@#{item.adresa_kupujuceho}..."
       ico = Company.find_ico_by_name(name, "#{item.adresa_kupujuceho}")
@@ -271,6 +272,18 @@ class Company < ActiveRecord::Base
       print "looking for #{name}@#{item.adresa_darcu}..."
       ico = Company.find_ico_by_name(name, item.adresa_darcu)
       SponzoriStran.update(item._record_id, {:ico_darcu => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
+
+  def self.map_ico_for_pozicky
+    puts "starting..."
+    Pozicky.all(:conditions => ["ICO = ? OR ICO = ?", "", 0]).each do |item|
+      name = item.firma_poskytovatela == "" ? "#{item.meno_poskytovatela} #{item.priezvisko_poskytovatela}":item.firma_poskytovatela
+      print "looking for #{name}@#{item.mesto_poskytovatela}..."
+      ico = Company.find_ico_by_name(name, "%#{item.mesto_poskytovatela}")
+      Pozicky.update(item._record_id, {:ICO => ico}) unless ico.nil?
       puts "finished - #{ico}"
     end
     puts "finished"
