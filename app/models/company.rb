@@ -88,6 +88,7 @@ class Company < ActiveRecord::Base
       end) as meno
     from
       sponzori_stran
+    where ico_darcu > 0
     group by ico_darcu"
   end
 
