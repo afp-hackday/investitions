@@ -10,6 +10,12 @@ class PoliticalParty < ActiveRecord::Base
       sponzori_stran"
   end
 
+  def all_companies
+   relevant_companies = companies.collect {|company| company.id }
+   relevant_companies = relevant_companies + companies.collect { |c| c.close_companies.collect {|company| company.id }}
+   relevant_companies.flatten.uniq
+  end
+
   def profits_per_year
     profits = Hash.new(0)
 
