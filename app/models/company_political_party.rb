@@ -1,5 +1,6 @@
 class CompanyPoliticalParty < ActiveRecord::Base
 
+
   def self.rebuild
     connection.execute "truncate table company_political_parties"
     connection.execute "INSERT INTO company_political_parties(company_id, political_party_id, sum, period)

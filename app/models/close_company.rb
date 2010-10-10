@@ -2,6 +2,9 @@ require 'lib/foaf_proxy'
 
 class CloseCompany < ActiveRecord::Base
 
+  belongs_to :company,  :class_name => "Company"
+  belongs_to :close_company,    :class_name => "Company"
+
   def self.rebuild
     connection.execute("truncate table close_companies")
 

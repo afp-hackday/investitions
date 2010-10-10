@@ -1,4 +1,15 @@
 class Company < ActiveRecord::Base
+  has_many :advantages
+  has_and_belongs_to_many :political_parties
+
+  has_many :close_companies_as_source, :foreign_key => 'company_id', :class_name => 'CloseCompany'
+
+  has_many :close_companies_as_target, :foreign_key => 'close_company_id', :class_name => 'CloseCompany'
+
+  has_many :close_companies, :through => :close_companies_as_source, :class_name => "Company"
+  #has_many :close_companies_inverse, :through => :close_companies_as_target, :class_name => "Company"
+
+
   def self.load_advantages
     Company.all.each { |company| company.compute_and_store_advantages }
   end
@@ -168,18 +179,41 @@ class Company < ActiveRecord::Base
     end
   end
 
-  def self.map_ico_for_sponzori
+  def self.map_ico_for_danove_ulavy
     puts "starting..."
-    SponzoriStran.all(:conditions => ["ico_darcu = ? OR ico_darcu = ?", "", 0]).each do |item|
-      name = item.firma_darcu == "" ? "#{item.meno_darcu} #{item.priezvisko_darcu}":item.firma_darcu
-      print "looking for #{name}@#{item.adresa_darcu}..."
-      ico = Company.find_ico_by_name(name, item.adresa_darcu)
-      SponzoriStran.update(item._record_id, {:ico_darcu => ico}) unless ico.nil?
+    DanoveUlavy.all(:conditions => ["ico = ? OR ico is NULL", ""]).each do |item|
+      name = item.firma == "" ? "#{item.meno} #{item.priezvisko}":item.firma
+      print "looking for #{name}@ ..."
+      ico = Company.find_ico_by_name(name, nil)
+      DanoveUlavy.update(item._record_id, {:ico => ico}) unless ico.nil?
       puts "finished - #{ico}"
     end
     puts "finished"
   end
 
+  def self.map_ico_for_eurofondy
+    puts "starting..."
+    Eurofondy.all(:conditions => ["ico_prijimatela = ? OR ico_prijimatela is NULL", ""]).each do |item|
+      name = item.firma_prijimatela == "" ? "#{item.meno_prijimatela} #{item.priezvisko_prijimatela}":item.firma_prijimatela
+      print "looking for #{name}@#{item.adresa_prijimatela} #{item.mesto_prijimatela}..."
+      ico = Company.find_ico_by_name(name, "#{item.adresa_prijimatela} #{item.mesto_prijimatela}")
+      Eurofondy.update(item._record_id, {:ico_prijimatela => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
+
+  def self.map_ico_for_ine_dotacie
+    puts "starting..."
+    IneDotacie.all(:conditions => ["ico_prijimatela = ? OR ico_prijimatela is NULL", ""]).each do |item|
+      name = item.firma_prijimatela == "" ? "#{item.meno_prijimatela} #{item.priezvisko_prijimatela}":item.firma_prijimatela
+      print "looking for #{name}@#{item.adresa_prijimatela}..."
+      ico = Company.find_ico_by_name(name, "#{item.adresa_prijimatela}")
+      IneDotacie.update(item._record_id, {:ico_prijimatela => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
 
   def self.map_ico_for_konsolidacna
     puts "starting..."
@@ -193,15 +227,56 @@ class Company < ActiveRecord::Base
     puts "finished"
   end
 
-  def self.map_ico_for_eurofondy
+  def self.map_ico_for_odpustene_clo
     puts "starting..."
-    Eurofondy.all(:conditions => ["ico_prijimatela = ? OR ico_prijimatela = ?", "", 0]).each do |item|
-      name = item.firma_prijimatela == "" ? "#{item.meno_prijimatela} #{item.priezvisko_prijimatela}":item.firma_prijimatela
-      print "looking for #{name}@#{item.adresa_prijimatela} #{item.mesto_prijimatela}..."
-      ico = Company.find_ico_by_name(name, "#{item.adresa_prijimatela} #{item.mesto_prijimatela}")
-      Eurofondy.update(item._record_id, {:ico_prijimatela => ico}) unless ico.nil?
+    OdpusteneClo.all(:conditions => ["ico = ? OR ico = ?", "", 0]).each do |item|
+      name = item.firma_deklaranta == "" ? "#{item.meno_deklaranta} #{item.priezvisko_deklaranta}":item.firma_deklaranta
+      print "looking for #{name}@#{item.adresa}..."
+      ico = Company.find_ico_by_name(name, "#{item.adresa}")
+      OdpusteneClo.update(item._record_id, {:ico => ico}) unless ico.nil?
       puts "finished - #{ico}"
     end
     puts "finished"
   end
+
+  def self.map_ico_for_polnodotacie
+    puts "starting..."
+    Polnodotacie.all(:conditions => ["ico_prijimatela = ? OR ico_prijimatela = ?", "", 0]).each do |item|
+      name = item.firma_prijimatela == "" ? "#{item.meno_prijimatela} #{item.priezvisko_prijimatela}":item.firma_prijimatela
+      print "looking for #{name}@#{item.adresa_prijimatela}..."
+      ico = Company.find_ico_by_name(name, "#{item.adresa_prijimatela}")
+      Polnodotacie.update(item._record_id, {:ico_prijimatela => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
+
+  def self.map_ico_for_privatizacie
+    puts "starting..."
+    Privatizacie.all(:conditions => ["ico_kupujuceho = ? OR ico_kupujuceho = ?", "", 0]).each do |item|
+      name = item.firma_kupujuceho == "" ? "#{item.meno_kupujuceho} #{item.priezvisko_kupujuceho}":item.firma_kupujuceho
+      print "looking for #{name}@#{item.adresa_kupujuceho}..."
+      ico = Company.find_ico_by_name(name, "#{item.adresa_kupujuceho}")
+      Privatizacie.update(item._record_id, {:ico_kupujuceho => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
+
+  def self.map_ico_for_sponzori
+    puts "starting..."
+    SponzoriStran.all(:conditions => ["ico_darcu = ? OR ico_darcu = ?", "", 0]).each do |item|
+      name = item.firma_darcu == "" ? "#{item.meno_darcu} #{item.priezvisko_darcu}":item.firma_darcu
+      print "looking for #{name}@#{item.adresa_darcu}..."
+      ico = Company.find_ico_by_name(name, item.adresa_darcu)
+      SponzoriStran.update(item._record_id, {:ico_darcu => ico}) unless ico.nil?
+      puts "finished - #{ico}"
+    end
+    puts "finished"
+  end
+
+
+
+
+
 end
